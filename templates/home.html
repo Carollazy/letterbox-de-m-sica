@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MusicBoxd</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #14181c;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(20,24,28,0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00c030;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-right a:hover {
+    color: white;
+}
+
+.search-bar input {
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1511379938547-c1f69419868d');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 600;
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.cta-button {
+    margin-top: 25px;
+    padding: 15px 35px;
+    background-color: #00c030;
+    color: black;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #00a828;
+}
+
+/* MUSIC PREVIEW */
+.preview {
+    background-color: #14181c;
+    padding: 60px 40px;
+}
+
+.preview h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.music-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.music-card {
+    min-width: 180px;
+    background-color: #1c2228;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.music-card:hover {
+    transform: scale(1.05);
+}
+
+.music-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.music-card h4 {
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.music-card p {
+    font-size: 12px;
+    color: #9ab;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">MusicBoxd 🎵</div>
+
+    <div class="nav-right">
+        {% if session.get("username") %}
+    <span>Olá, {{ session["username"] }}</span>
+    <a href="/logout">Sair</a>
+{% else %}
+    <a href="/entrar">Entrar</a>
+    <a href="/cadastrar">Cadastrar</a>
+{% endif %}
+        <a href="/musicas">Músicas</a>
+        <a href="/listas">Listas</a>
+        <a href="/artistas">Artistas</a>
+        <a href="/diario">Diário</a>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <h1>
+        Acompanhe suas músicas<br>
+        Refine seu bom gosto musical<br>
+        E compartilhe com seus amigos
+    </h1>
+
+    <a href="/cadastrar" class="cta-button">Comece agora! Cadastre-se</a>
+
+    <p>O site perfeito para amantes da música</p>
+</div>
+
+<div class="preview">
+    <h2>Músicas em destaque</h2>
+
+    <div class="music-row">
+        <div class="music-card">
+            <img src="https://via.placeholder.com/200x200">
+            <h4>Midnight Echo</h4>
+            <p>Dreamwave</p>
+        </div>
+
+        <div class="music-card">
+            <img src="https://via.placeholder.com/200x200">
+            <h4>Golden Lights</h4>
+            <p>Indie Pop</p>
+        </div>
+
+        <div class="music-card">
+            <img src="https://via.placeholder.com/200x200">
+            <h4>Neon Skies</h4>
+            <p>Synthwave</p>
+        </div>
+
+        <div class="music-card">
+            <img src="https://via.placeholder.com/200x200">
+            <h4>Ocean Whispers</h4>
+            <p>Lo-Fi</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

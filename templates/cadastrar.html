@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar - MusicBoxd</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #1c2228;
+    padding: 40px;
+    border-radius: 16px;
+    width: 350px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #2a3138;
+    color: white;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00c030;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #00a828;
+}
+
+.link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.link a {
+    color: #00c030;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Crie sua conta 🎵</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Nome de usuário" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="link">
+        Já tem conta? <a href="/entrar">Entrar</a>
+    </div>
+</div>
+
+</body>
+</html>
+
